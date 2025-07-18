@@ -1,0 +1,17 @@
+import faxada from "../assets/faxada.png";
+
+export default function Header() {
+  return (
+    <header
+      className="relative h-40 md:h-80 flex items-center justify-start mt-5 md:mt-5 bg-center bg-cover"
+      style={{ backgroundImage: `url(${faxada})` }}
+    >
+      <div className="h-40 ml-2 flex flex-col items-end justify-start gap-4">
+        <h1 className="text-black text-3xl bg-gray-100/60 p-1.5 rounded-xl">
+          Casa à venda direto com o proprietário
+        </h1>
+        <p className="  bg-gray-100/60 p-1.5 rounded-xl">Entre em contato</p>
+      </div>
+    </header>
+  );
+}
