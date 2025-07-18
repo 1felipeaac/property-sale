@@ -3,21 +3,11 @@ import type { GetWeatherByCityResponseProps, NextDaysItemProps, TodayProps, Weat
 import { getNextDays } from "../utils/get-next-days";
 import { weatherIcons } from "../utils/weatherIcons";
 import { api } from "./open-weathermap";
-import { getCityByNameService } from "./get-city-by-name";
 
+export async function getWeatherByCity(): Promise<GetWeatherByCityResponseProps> {
 
-interface GetWeatherByCityProps{
-  cityName: string
-}
-
-export async function getWeatherByCity({ cityName }: GetWeatherByCityProps): Promise<GetWeatherByCityResponseProps> {
-  
-    const city = await getCityByNameService(cityName)
-
-    const timon = city[0]
-
-    const latitude = timon.latitude
-    const longitude = timon.longitude
+    const latitude = -5.102512
+    const longitude = -42.819861
 
     const { data } = await api.get<WeatherAPIResponseProps>(`/forecast?lat=${latitude}&lon=${longitude}`);
     const { main, weather, wind, pop } = data.list[0];
@@ -64,5 +54,5 @@ export async function getWeatherByCity({ cityName }: GetWeatherByCityProps): Pro
       }
     });
   
-    return { city:city[0], today, nextDays }
+    return { today, nextDays }
   }
