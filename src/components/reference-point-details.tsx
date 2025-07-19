@@ -1,20 +1,19 @@
-import Icon from "./icon";
-import Text from "./text";
+import type React from "react";
 
-interface ReferncePointDetailsProps extends React.ComponentProps<"div">{
-    svg: React.FC<React.ComponentProps<"svg">>
-    children?: React.ReactNode 
-    as?: keyof React.JSX.IntrinsicElements;
+interface ReferencePointDetailsProps extends React.ComponentProps<"div"> {
+  children?: React.ReactNode;
+  as?: keyof React.JSX.IntrinsicElements;
 }
 
-export default function ReferencePointDetails({svg, as, children, className,...props}:ReferncePointDetailsProps){
-
-    return(
-        <div className={className} {...props}>
-            <Icon svg={svg}/>
-            <Text as={as}>
-                {children}
-            </Text>
-        </div>
-    )
+export default function ReferencePointDetails({
+  as,
+  children,
+  className,
+  ...props
+}: ReferencePointDetailsProps) {
+  return (
+    <div className={className} {...props}>
+      {children}
+    </div>
+  );
 }

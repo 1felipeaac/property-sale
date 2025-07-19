@@ -1,38 +1,8 @@
 import Details from "./details";
-
-import Garage from "../assets/icons/garage.svg?react";
-import House from "../assets/icons/house.svg?react";
-import Room from "../assets/icons/room.svg?react";
-import Size from "../assets/icons/size.svg?react";
+import { details } from "../utils/lists";
 
 const classNameProps = "fill-purple-hover min-h-4";
 
-const details = [
-  {
-    clasName: classNameProps,
-    svg: Size,
-    title: "Terreno",
-    description: "360m²",
-  },
-  {
-    clasName: classNameProps,
-    svg: House,
-    title: "Construção",
-    description: "160m²",
-  },
-  {
-    clasName: classNameProps,
-    svg: Room,
-    title: "Quartos",
-    description: "2",
-  },
-  {
-    clasName: classNameProps,
-    svg: Garage,
-    title: "Garagem",
-    description: "1",
-  },
-];
 
 export default function ListDetails() {
   return (
@@ -40,7 +10,7 @@ export default function ListDetails() {
       {details.map((detail) => (
         <Details
           key={detail.title + detail.description}
-          className={detail.clasName}
+          className={classNameProps}
           svg={detail.svg}
           title={detail.title}
           description={detail.description}

@@ -1,23 +1,5 @@
 import type { WeatherIconsKeyProps, weatherIcons } from "../utils/weatherIcons"
 
-export interface Data{
-    location: Location
-    current: Current
-}
-
-export interface Location{
-    name: string
-    country: string
-    region: string
-    localtime: string
-}
-
-export interface Current{
-    temperature: number
-    weather_icons: string[]
-    weather_descriptions: string[]
-}
-
 export interface WeatherAPIResponseProps{
     list:{
       pop: number;

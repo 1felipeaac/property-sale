@@ -2,9 +2,12 @@
 
 @theme {
   --color-*:initial;
+  --color-white: #ffffff;
   --color-gray-100: #ebebeb;
   --color-gray-200: #878777;
-  --color-gray-300: #353b36;
+  --color-gray-300: #9c9a9a;
+  --color-gray-400: #353b36;
+  --color-gray-shadow: #bab5b5;
   --color-black: #0d0b0b;
   --color-green-100: #2ad44c;
   --color-green-icon: #115c20;

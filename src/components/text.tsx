@@ -15,7 +15,7 @@ export default function Text({
     return React.createElement(
         as,
         {
-            className: {className},
+            className,
             ...props
         },
         children

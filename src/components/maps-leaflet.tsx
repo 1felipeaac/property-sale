@@ -6,8 +6,11 @@ import L from "leaflet";
 import Button from "./button";
 import Map from "../assets/icons/map.svg?react";
 import Globe from "../assets/icons/globe.svg?react";
+import Text from "./text";
 
-const center = { lat: -5.102512, lng: -42.819861 };
+const { VITE_LOCATION_LATITUDE, VITE_LOCATION_LONGITUDE } = import.meta.env;
+
+const center = { lat: VITE_LOCATION_LATITUDE, lng: VITE_LOCATION_LONGITUDE };
 
 const customIcon = new L.Icon({
   iconUrl: pin,
@@ -36,13 +39,12 @@ export default function MapLeaflet() {
   const currentLayer = satellite ? mapLayers.esri : mapLayers.osm;
 
   return (
-    <div className="flex flex-col gap-2 mt-1 md:mt-1 items-center">
+    <div className="flex flex-col gap-2 mt-1 md:mt-1 items-center relative">
       <MapContainer
-        className="h-60 w-80"
+        className="h-80 w-90 relative z-0"
         center={center}
         zoom={17}
         scrollWheelZoom={true}
-        // style={{ width: '20rem', height: '15rem' }}
         maxZoom={19}
       >
         <TileLayer
@@ -56,21 +58,25 @@ export default function MapLeaflet() {
             Piauí
           </Popup>
         </Marker>
+        <div className="leaflet-top leaflet-left mt-20 ml-2 z-[1000] absolute">
+          <Button
+            icon={icon}
+            iconClassName="fill-black w-6"
+            onClick={() => setSatellite((prev) => !prev)}
+            className={`
+              pointer-events-auto
+              bg-white text-sm text-black
+              rounded-sm
+              flex items-center justify-center pl-1 pr-1
+              border-1 border-gray-shadow shadow
+              hover:bg-gray-100
+              ml-0.5
+            `}
+          >
+            <Text>{satellite}</Text>
+          </Button>
+        </div>
       </MapContainer>
-      <Button
-        icon={icon}
-        onClick={() => setSatellite((prev) => !prev)}
-        className={`
-            bg-gray-200
-            text-gray-100
-            cursor-pointer 
-            flex items-center justify-center
-            max-w-fit
-            p-1 rounded-xl
-          `}
-      >
-        {satellite ? "Mapa" : "Satélite"}
-      </Button>
     </div>
   );
 }

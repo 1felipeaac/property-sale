@@ -13,9 +13,6 @@ export default function Header() {
             <h1 className="text-black text-3xl bg-gray-100/60 p-1.5">
               Imóvel à venda direto com o proprietário
             </h1>
-            <p className="  bg-gray-100/60 p-1.5">
-              Entre em contato
-            </p>
           </div>
       </header>
     </>
