@@ -1,12 +1,12 @@
 import Details from "./details";
 import { details } from "../utils/lists";
 
-const classNameProps = "fill-purple-hover min-h-4";
+const classNameProps = "fill-purple-bold min-h-4";
 
 
 export default function ListDetails() {
   return (
-    <span className="grid grid-cols-2 gap-4 max-w-4xl min-h-2.5 h-56 px-2 justify-items-center">
+    <span className="grid grid-cols-2 gap-4 min-h-2.5 h-56 px-2 justify-items-center">
       {details.map((detail) => (
         <Details
           key={detail.title + detail.description}

@@ -41,7 +41,7 @@ export default function MapLeaflet() {
   return (
     <div className="flex flex-col gap-2 mt-1 md:mt-1 items-center relative">
       <MapContainer
-        className="h-80 w-90 relative z-0"
+        className="h-70 w-120 relative z-0"
         center={center}
         zoom={17}
         scrollWheelZoom={true}
@@ -65,6 +65,7 @@ export default function MapLeaflet() {
             onClick={() => setSatellite((prev) => !prev)}
             className={`
               pointer-events-auto
+              cursor-pointer
               bg-white text-sm text-black
               rounded-sm
               flex items-center justify-center pl-1 pr-1

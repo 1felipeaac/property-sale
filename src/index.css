@@ -9,10 +9,12 @@
   --color-gray-400: #353b36;
   --color-gray-shadow: #bab5b5;
   --color-black: #0d0b0b;
-  --color-green-100: #2ad44c;
-  --color-green-icon: #115c20;
-  --color-purple-default: #ecbff5;
-  --color-purple-hover: #92649c;
+  --color-green-light: #2ad44c;
+  --color-green-bold: #115c20;
+  --color-purple-light: #ecbff5;
+  --color-purple-bold: #92649c;
+  --color-red-error: #eb4034;
+  --color-blue: #1197d1;
 
   --font-sans: "Inter", sans-serif;
 

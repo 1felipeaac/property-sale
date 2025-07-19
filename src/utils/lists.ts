@@ -45,21 +45,21 @@ export const details = [
   {
     svg: Size,
     title: "Terreno",
-    description: "360m²",
+    description: "~600m²",
   },
   {
     svg: House,
     title: "Construção",
-    description: "160m²",
+    description: "~308m²",
   },
   {
     svg: Room,
-    title: "Quartos",
-    description: "2",
+    title: "Suites",
+    description: "3",
   },
   {
     svg: Garage,
     title: "Garagem",
-    description: "1",
+    description: "2",
   },
 ];
