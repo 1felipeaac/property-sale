@@ -16,31 +16,31 @@ export const location = [
     icon_refer: Bridge,
     refer: "Ponte da Amizade",
     icon_distance: Ruler,
-    distance: "~600m",
+    distance: "~0,6km",
   },
   {
     icon_refer: Market,
     refer: "Shopping/Supermercado",
     icon_distance: Ruler,
-    distance: "~1300m",
+    distance: "~1,3km",
   },
   {
     icon_refer: Bridge,
     refer: "Ponte Metálica",
     icon_distance: Ruler,
-    distance: "~1800m",
+    distance: "~1,8km",
   },
   {
     icon_refer: City,
     refer: "Centro de Teresina",
     icon_distance: Ruler,
-    distance: "~2500m",
+    distance: "~2,5km",
   },
   {
     icon_refer: Bridge,
     refer: "Ponte Nova (Tabuleta)",
     icon_distance: Ruler,
-    distance: "~4300m",
+    distance: "~4,3km",
   },
 ];
 

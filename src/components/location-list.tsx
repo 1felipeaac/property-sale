@@ -20,14 +20,14 @@ export default function LocationList() {
           key={local.refer + local.icon_distance}
         >
           <LocationDetails
-            className={"flex flex-1 items-center justify-items-end gap-2"}
+            className={"flex md:flex-1 items-center justify-items-end gap-2"}
             iconClassName="fill-blue"
             svg={local.icon_refer}
             text={local.refer}
           />
           <LocationDetails
             className={"flex items-center justify-items-end gap-2"}
-            iconClassName="fill-blue"
+            iconClassName="fill-blue hidden md:block"
             svg={local.icon_distance}
             text={local.distance}
           />
