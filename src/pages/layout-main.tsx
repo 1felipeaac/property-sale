@@ -24,9 +24,9 @@ export default function LayoutMain() {
         </div>
         <div
           className="flex flex-col 
-            md:flex-row items-center 
+            md:flex-row items-start 
             justify-evenly gap-4 w-full 
-            border-2 border-green-light mt-5"
+            "
         >
           <ContactUs phone={VITE_CONTATO_1} msg="Falar com o Proprietário" />
           <ContactUs phone={VITE_CONTATO_2} msg="Contato Local" />

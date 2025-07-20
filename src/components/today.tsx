@@ -31,7 +31,7 @@ export function Today({ city, weather }: TodayProps) {
 
         <main className="flex items-center justify-center">
           <h1>{weather?.temp}ºc</h1>
-          <img src={icon} alt="Tempo" />
+          <img className="w-20 md:w-full" src={icon} alt="Tempo" />
         </main>
 
         <footer>

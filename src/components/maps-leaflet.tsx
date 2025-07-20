@@ -41,7 +41,7 @@ export default function MapLeaflet() {
   return (
     <div className="flex flex-col gap-2 mt-1 md:mt-1 items-center relative">
       <MapContainer
-        className="h-70 w-100 relative z-0"
+        className="h-70 w-80 md:w-100 relative z-0"
         center={center}
         zoom={17}
         scrollWheelZoom={true}
