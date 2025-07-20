@@ -11,7 +11,6 @@ interface TodayProps {
 
 export function Today({ city, weather }: TodayProps) {
   const today = dayjs(new Date()).format("dddd, DD [de] MMMM [de] YYYY");
-  const today_md = dayjs(new Date()).format("DD/MM/YY");
   const isDay = isDayTime();
 
   const bgImg = isDay ? weather.details.bg_day : weather.details.bg_night;

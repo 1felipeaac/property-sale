@@ -4,9 +4,9 @@ import Market from "../assets/icons/shopping-cart.svg?react";
 import City from "../assets/icons/city.svg?react";
 
 import Garage from "../assets/icons/garage.svg?react";
-import House from "../assets/icons/house.svg?react";
+// import House from "../assets/icons/house.svg?react";
+// import Size from "../assets/icons/size.svg?react";
 import Room from "../assets/icons/room.svg?react";
-import Size from "../assets/icons/size.svg?react";
 import Bath from "../assets/icons/toilet.svg?react";
 import Hall from "../assets/icons/television-simple.svg?react";
 import kitchen from "../assets/icons/cooking-pot.svg?react";

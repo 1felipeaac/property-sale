@@ -22,7 +22,7 @@ export default function LayoutMain() {
           <Slider />
           <ListDetails />
         </div>
-        <div 
+        <div
           className="flex flex-col 
             md:flex-row items-center 
             justify-evenly gap-4 w-full 
