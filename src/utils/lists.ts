@@ -7,6 +7,9 @@ import Garage from "../assets/icons/garage.svg?react";
 import House from "../assets/icons/house.svg?react";
 import Room from "../assets/icons/room.svg?react";
 import Size from "../assets/icons/size.svg?react";
+import Bath from "../assets/icons/toilet.svg?react";
+import Hall from "../assets/icons/television-simple.svg?react";
+import kitchen from "../assets/icons/cooking-pot.svg?react";
 
 export const location = [
   {
@@ -42,20 +45,35 @@ export const location = [
 ];
 
 export const details = [
-  {
-    svg: Size,
-    title: "Terreno",
-    description: "~600m²",
-  },
-  {
-    svg: House,
-    title: "Construção",
-    description: "~308m²",
-  },
+  // {
+  //   svg: Size,
+  //   title: "Terreno",
+  //   description: "~600m²",
+  // },
+  // {
+  //   svg: House,
+  //   title: "Construção",
+  //   description: "~308m²",
+  // },
   {
     svg: Room,
-    title: "Suites",
+    title: "Suite",
     description: "3",
+  },
+  {
+    svg: Hall,
+    title: "Sala",
+    description: "2",
+  },
+  {
+    svg: kitchen,
+    title: "Cozinha",
+    description: "1",
+  },
+  {
+    svg: Bath,
+    title: "Banheiro",
+    description: "1",
   },
   {
     svg: Garage,

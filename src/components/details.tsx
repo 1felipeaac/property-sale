@@ -9,7 +9,7 @@ interface DetailsProps extends React.ComponentProps<"svg">{
 export default function Details({svg: SVGComponent, title, description, className, ...props}:DetailsProps){
 
     return(
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2 items-center min-w-35">
             <SVGComponent className={className} {...props}/>
             <span>
                 <h2>{title}</h2>

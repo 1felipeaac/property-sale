@@ -13,7 +13,7 @@ export default function Container({
     return React.createElement(
         as,
         {
-            className: "h-screen flex justify-center items-center",
+            className,
             ...props
         },
         children

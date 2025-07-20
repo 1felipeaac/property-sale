@@ -22,21 +22,21 @@ export function OpenWeather() {
       })
       .catch((err) => {
         console.error("Erro ao buscar clima:", err);
-        setError("⚠️ Erro ao carregar os dados do clima. Atualize a página!.");
+        setError("⚠️ Erro ao carregar os dados do clima. Atualize a página!");
       })
       .finally(() => setIsLoading(false));
   }, []);
 
   if (isLoading) {
     return (
-      <div className="flex justify-center mt-2">
+      <div className="flex justify-center mt-2 mb-2">
         <Icon className="animate-spin" svg={Spinner} />
       </div>
     );
   }
 
   if (error) {
-    return <div className="flex justify-center text-red-error">{error}</div>;
+    return <div className="flex justify-center text-red-error mt-2 mb-2">{error}</div>;
   }
 
   return (

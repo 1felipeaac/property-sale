@@ -1,21 +1,22 @@
 import Details from "./details";
+import Text from "./text";
 import { details } from "../utils/lists";
-
-const classNameProps = "fill-purple-bold min-h-4";
-
 
 export default function ListDetails() {
   return (
-    <span className="grid grid-cols-2 gap-4 min-h-2.5 h-56 px-2 justify-items-center">
-      {details.map((detail) => (
-        <Details
-          key={detail.title + detail.description}
-          className={classNameProps}
-          svg={detail.svg}
-          title={detail.title}
-          description={detail.description}
-        />
-      ))}
-    </span>
+    <div>
+      <Text as="h1" className="text-center text-2xl">Detalhes</Text>
+      <span className="grid grid-cols-2 gap-3 p-2 justify-items-center">
+        {details.map((detail) => (
+          <Details
+            key={detail.title + detail.description}
+            className={"fill-purple-bold min-h-4"}
+            svg={detail.svg}
+            title={detail.title}
+            description={detail.description}
+          />
+        ))}
+      </span>
+    </div>
   );
 }
