@@ -3,7 +3,7 @@ import LayoutMain from "./pages/layout-main";
 
 export default function App() {
   return (
-    <Container>
+    <Container className="h-full">
       <LayoutMain/>
     </Container>
   );

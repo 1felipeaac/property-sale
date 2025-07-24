@@ -5,8 +5,8 @@ import { details } from "../utils/lists";
 export default function ListDetails() {
   return (
     <div>
-      <Text as="h1" className="text-center text-2xl">Detalhes</Text>
-      <span className="grid grid-cols-2 gap-3 p-2 justify-items-center">
+      <Text as="h1" className="text-center uppercase text-1xl md:text-2xl">Detalhes</Text>
+      <span className="grid grid-cols-3 md:grid-cols-2 gap-1 md:gap-3 justify-items-center">
         {details.map((detail) => (
           <Details
             key={detail.title + detail.description}
