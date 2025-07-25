@@ -4,12 +4,16 @@ import Market from "../assets/icons/shopping-cart.svg?react";
 import City from "../assets/icons/city.svg?react";
 
 import Garage from "../assets/icons/garage.svg?react";
-// import House from "../assets/icons/house.svg?react";
-// import Size from "../assets/icons/size.svg?react";
 import Room from "../assets/icons/room.svg?react";
 import Bath from "../assets/icons/toilet.svg?react";
 import Hall from "../assets/icons/television-simple.svg?react";
 import kitchen from "../assets/icons/cooking-pot.svg?react";
+
+import Terreno from "../assets/contorno-terreno.png";
+import Area_Construida from "../assets/areas-construidas.png";
+import { env } from "../env";
+
+const { VITE_CONTATO_1, VITE_CONTATO_2 } = env;
 
 export const location = [
   {
@@ -45,16 +49,6 @@ export const location = [
 ];
 
 export const details = [
-  // {
-  //   svg: Size,
-  //   title: "Terreno",
-  //   description: "~600m²",
-  // },
-  // {
-  //   svg: House,
-  //   title: "Construção",
-  //   description: "~308m²",
-  // },
   {
     svg: Room,
     title: "Suite",
@@ -81,3 +75,22 @@ export const details = [
     description: "2",
   },
 ];
+
+export const contatosList = [
+  { phone: VITE_CONTATO_1, msg: "Proprietário"},
+  { phone: VITE_CONTATO_2, msg: "Contato Local"}
+]
+
+export const carouselList =[
+  {
+    svg: Terreno,
+    alt: "Terreno",
+    desc: "🟨: ~600m² (20mx30m)",
+  },
+  {
+    svg: Area_Construida,
+    alt: "Área Construída",
+    desc: "🟩: ~198m² | 🟦: ~43m² | 🟥: ~67m²",
+  },
+
+]

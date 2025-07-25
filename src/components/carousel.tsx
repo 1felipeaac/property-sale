@@ -1,9 +1,7 @@
+import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import { useState } from "react";
-import "keen-slider/keen-slider.min.css";
-
-import Terreno from "../assets/contorno-terreno.png";
-import Area_Construida from "../assets/areas-construidas.png";
+import { carouselList } from "../utils/lists";
 import Arrow_Left from "../assets/icons/arrow-left.svg?react";
 import Arrow_Right from "../assets/icons/arrow-right.svg?react";
 import Icon from "./icon";
@@ -25,24 +23,9 @@ export default function Carousel() {
     },
   });
   return (
-    <div className="flex flex-col relative w-full mx-auto justify-center">
-      <div ref={slideRef} className="keen-slider pt-2">
-        <div className="keen-slider__slide number-slide1 flex justify-center flex-col items-center">
-          <img
-            className="h-auto max-w-[540px] w-full object-cover mx-auto"
-            src={Terreno}
-            alt="Terreno"
-          />
-          <p className="text-center">🟨: ~600m² (20mx30m)</p>
-        </div>
-        <div className="keen-slider__slide number-slide2">
-          <img
-            className="h-auto max-w-[540px] w-full object-cover mx-auto"
-            src={Area_Construida}
-            alt="Area Construida"
-          />
-          <p className="text-center">🟩: ~198m² | 🟦: ~43m² | 🟥: ~67m²</p>
-        </div>
+    <div className="relative w-full max-w-full flex flex-col items-center justify-center">
+      <div ref={slideRef} className="keen-slider w-full max-w-full px-2">
+        <DetailListCarousel details={carouselList}/>
       </div>
       {loaded && instanceRef.current && (
         <>
@@ -82,11 +65,36 @@ function Arrow(props: {
           absolute top-1/2 transform -translate-y-1/2 
           z-10 cursor-pointer w-8 h-8 bg-purple-bold/60 
           rounded-sm ${
-        props.left ? "left-2 md:left-25" : "right-2 md:right-25"
+        props.left ? "left-4 md:left-29" : "right-2 md:right-25"
       } ${disabled}`}
     >
       {props.left && <Icon className="fill-white" svg={Arrow_Left} />}
       {!props.left && <Icon className="fill-white" svg={Arrow_Right} />}
     </svg>
   );
+}
+interface DetailCarousel {
+  svg: string
+  alt: string
+  desc: string
+}
+
+interface DetailCarouselProps{
+  details: DetailCarousel[]
+}
+function DetailListCarousel({
+  details
+}:DetailCarouselProps){
+
+  return(
+    <>{details.map((detail, index) => (
+    <div key={index} className="keen-slider__slide number-slide1 w-full flex flex-col items-center">
+      <img
+        className="h-auto max-w-[540px] w-full object-cover mx-auto"
+        src={detail.svg}
+        alt={detail.alt}
+      />
+      <p className="text-center">{detail.desc}</p>
+    </div>))}</>
+  )
 }
