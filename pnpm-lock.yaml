@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@tailwindcss/vite':
         specifier: ^4.1.11
-        version: 4.1.11(vite@7.0.4(jiti@2.4.2)(lightningcss@1.30.1))
+        version: 4.1.11(vite@7.0.4(@types/node@24.1.0)(jiti@2.4.2)(lightningcss@1.30.1))
       axios:
         specifier: ^1.10.0
         version: 1.10.0
@@ -32,9 +32,9 @@ importers:
       react-leaflet:
         specifier: ^5.0.0
         version: 5.0.0(leaflet@1.9.4)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      tailwindcss:
-        specifier: ^4.1.11
-        version: 4.1.11
+      zod:
+        specifier: ^4.0.9
+        version: 4.0.9
     devDependencies:
       '@eslint/js':
         specifier: ^9.30.1
@@ -42,6 +42,9 @@ importers:
       '@types/leaflet':
         specifier: ^1.9.20
         version: 1.9.20
+      '@types/node':
+        specifier: ^24.1.0
+        version: 24.1.0
       '@types/react':
         specifier: ^19.1.8
         version: 19.1.8
@@ -50,7 +53,7 @@ importers:
         version: 19.1.6(@types/react@19.1.8)
       '@vitejs/plugin-react-swc':
         specifier: ^3.10.2
-        version: 3.10.2(vite@7.0.4(jiti@2.4.2)(lightningcss@1.30.1))
+        version: 3.10.2(vite@7.0.4(@types/node@24.1.0)(jiti@2.4.2)(lightningcss@1.30.1))
       eslint:
         specifier: ^9.30.1
         version: 9.31.0(jiti@2.4.2)
@@ -63,6 +66,9 @@ importers:
       globals:
         specifier: ^16.3.0
         version: 16.3.0
+      tailwindcss:
+        specifier: ^4.1.11
+        version: 4.1.11
       typescript:
         specifier: ~5.8.3
         version: 5.8.3
@@ -71,10 +77,10 @@ importers:
         version: 8.37.0(eslint@9.31.0(jiti@2.4.2))(typescript@5.8.3)
       vite:
         specifier: ^7.0.4
-        version: 7.0.4(jiti@2.4.2)(lightningcss@1.30.1)
+        version: 7.0.4(@types/node@24.1.0)(jiti@2.4.2)(lightningcss@1.30.1)
       vite-plugin-svgr:
         specifier: ^4.3.0
-        version: 4.3.0(rollup@4.45.1)(typescript@5.8.3)(vite@7.0.4(jiti@2.4.2)(lightningcss@1.30.1))
+        version: 4.3.0(rollup@4.45.1)(typescript@5.8.3)(vite@7.0.4(@types/node@24.1.0)(jiti@2.4.2)(lightningcss@1.30.1))
 
 packages:
 
@@ -755,6 +761,9 @@ packages:
 
   '@types/leaflet@1.9.20':
     resolution: {integrity: sha512-rooalPMlk61LCaLOvBF2VIf9M47HgMQqi5xQ9QRi7c8PkdIe0WrIi5IxXUXQjAdL0c+vcQ01mYWbthzmp9GHWw==}
+
+  '@types/node@24.1.0':
+    resolution: {integrity: sha512-ut5FthK5moxFKH2T1CUOC6ctR67rQRvvHdFLCD2Ql6KXmMuCrjsSsRI9UsLCm9M18BMwClv4pn327UvB7eeO1w==}
 
   '@types/react-dom@19.1.6':
     resolution: {integrity: sha512-4hOiT/dwO8Ko0gV1m/TJZYk3y0KBnY9vzDh7W+DH17b2HFSOGgdj33dhihPeuy3l0q23+4e+hoXHV6hCC4dCXw==}
@@ -1570,6 +1579,9 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
+  undici-types@7.8.0:
+    resolution: {integrity: sha512-9UJ2xGDvQ43tYyVMpuHlsgApydB8ZKfVYTsLDhXkFL/6gfkp+U8xTGdh8pMJv1SpZna0zxG1DwsKZsreLbXBxw==}
+
   update-browserslist-db@1.1.3:
     resolution: {integrity: sha512-UxhIZQ+QInVdunkDAaiazvvT/+fXL5Osr0JZlJulepYu6Jd7qJtDZjlur0emRlT71EN3ScPoE7gvsuIKKNavKw==}
     hasBin: true
@@ -1643,6 +1655,9 @@ packages:
   yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
+
+  zod@4.0.9:
+    resolution: {integrity: sha512-PAqUh1FW4Irxcs6/sWfnhJGV/8F0eLNd1FryydBfbA9Qvz1LaJk0TDrSC+hIKlArS/xVISuX/yjlS1bzg2D3Zw==}
 
 snapshots:
 
@@ -2178,12 +2193,12 @@ snapshots:
       '@tailwindcss/oxide-win32-arm64-msvc': 4.1.11
       '@tailwindcss/oxide-win32-x64-msvc': 4.1.11
 
-  '@tailwindcss/vite@4.1.11(vite@7.0.4(jiti@2.4.2)(lightningcss@1.30.1))':
+  '@tailwindcss/vite@4.1.11(vite@7.0.4(@types/node@24.1.0)(jiti@2.4.2)(lightningcss@1.30.1))':
     dependencies:
       '@tailwindcss/node': 4.1.11
       '@tailwindcss/oxide': 4.1.11
       tailwindcss: 4.1.11
-      vite: 7.0.4(jiti@2.4.2)(lightningcss@1.30.1)
+      vite: 7.0.4(@types/node@24.1.0)(jiti@2.4.2)(lightningcss@1.30.1)
 
   '@types/estree@1.0.8': {}
 
@@ -2194,6 +2209,10 @@ snapshots:
   '@types/leaflet@1.9.20':
     dependencies:
       '@types/geojson': 7946.0.16
+
+  '@types/node@24.1.0':
+    dependencies:
+      undici-types: 7.8.0
 
   '@types/react-dom@19.1.6(@types/react@19.1.8)':
     dependencies:
@@ -2296,11 +2315,11 @@ snapshots:
       '@typescript-eslint/types': 8.37.0
       eslint-visitor-keys: 4.2.1
 
-  '@vitejs/plugin-react-swc@3.10.2(vite@7.0.4(jiti@2.4.2)(lightningcss@1.30.1))':
+  '@vitejs/plugin-react-swc@3.10.2(vite@7.0.4(@types/node@24.1.0)(jiti@2.4.2)(lightningcss@1.30.1))':
     dependencies:
       '@rolldown/pluginutils': 1.0.0-beta.11
       '@swc/core': 1.12.14
-      vite: 7.0.4(jiti@2.4.2)(lightningcss@1.30.1)
+      vite: 7.0.4(@types/node@24.1.0)(jiti@2.4.2)(lightningcss@1.30.1)
     transitivePeerDependencies:
       - '@swc/helpers'
 
@@ -3013,6 +3032,8 @@ snapshots:
 
   typescript@5.8.3: {}
 
+  undici-types@7.8.0: {}
+
   update-browserslist-db@1.1.3(browserslist@4.25.1):
     dependencies:
       browserslist: 4.25.1
@@ -3023,18 +3044,18 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  vite-plugin-svgr@4.3.0(rollup@4.45.1)(typescript@5.8.3)(vite@7.0.4(jiti@2.4.2)(lightningcss@1.30.1)):
+  vite-plugin-svgr@4.3.0(rollup@4.45.1)(typescript@5.8.3)(vite@7.0.4(@types/node@24.1.0)(jiti@2.4.2)(lightningcss@1.30.1)):
     dependencies:
       '@rollup/pluginutils': 5.2.0(rollup@4.45.1)
       '@svgr/core': 8.1.0(typescript@5.8.3)
       '@svgr/plugin-jsx': 8.1.0(@svgr/core@8.1.0(typescript@5.8.3))
-      vite: 7.0.4(jiti@2.4.2)(lightningcss@1.30.1)
+      vite: 7.0.4(@types/node@24.1.0)(jiti@2.4.2)(lightningcss@1.30.1)
     transitivePeerDependencies:
       - rollup
       - supports-color
       - typescript
 
-  vite@7.0.4(jiti@2.4.2)(lightningcss@1.30.1):
+  vite@7.0.4(@types/node@24.1.0)(jiti@2.4.2)(lightningcss@1.30.1):
     dependencies:
       esbuild: 0.25.6
       fdir: 6.4.6(picomatch@4.0.2)
@@ -3043,6 +3064,7 @@ snapshots:
       rollup: 4.45.1
       tinyglobby: 0.2.14
     optionalDependencies:
+      '@types/node': 24.1.0
       fsevents: 2.3.3
       jiti: 2.4.2
       lightningcss: 1.30.1
@@ -3058,3 +3080,5 @@ snapshots:
   yallist@5.0.0: {}
 
   yocto-queue@0.1.0: {}
+
+  zod@4.0.9: {}

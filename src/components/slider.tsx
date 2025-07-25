@@ -25,11 +25,11 @@ export default function Slider() {
     },
   });
   return (
-    <div className="relative w-full max-w-80 mx-auto">
-      <div ref={slideRef} className="keen-slider">
-        <div className="keen-slider__slide number-slide1">
+    <div className="flex flex-col relative w-full mx-auto justify-center">
+      <div ref={slideRef} className="keen-slider pt-2">
+        <div className="keen-slider__slide number-slide1 flex justify-center flex-col items-center">
           <img
-            className="max-h-60 w-full object-cover"
+            className="h-auto max-w-[500px] w-full object-cover mx-auto"
             src={Terreno}
             alt="Terreno"
           />
@@ -37,7 +37,7 @@ export default function Slider() {
         </div>
         <div className="keen-slider__slide number-slide2">
           <img
-            className="max-h-60 w-full object-cover"
+            className="h-auto max-w-[500px] w-full object-cover mx-auto"
             src={Area_Construida}
             alt="Area Construida"
           />
@@ -82,7 +82,7 @@ function Arrow(props: {
           absolute top-1/2 transform -translate-y-1/2 
           z-10 cursor-pointer w-8 h-8 bg-purple-bold/60 
           rounded-sm ${
-        props.left ? "left-2" : "right-2"
+        props.left ? "left-2 md:left-25" : "right-2 md:right-25"
       } ${disabled}`}
     >
       {props.left && <Icon className="fill-white" svg={Arrow_Left} />}

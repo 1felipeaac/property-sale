@@ -19,10 +19,12 @@ export default function Footer() {
     },[]);
 
   return (
-    <footer className="my-5 md:my-10">
+    <footer className="text-center py-4 mt-auto">
       <nav className="flex items-center justify-center gap-4">
         <Icon className="" svg={GitIcon}/>
-        <p>{user.html_url}</p>
+        <a href={user.html_url} target="_blank">
+          {user.html_url}
+        </a>
       </nav>
     </footer>
   );

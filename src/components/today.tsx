@@ -17,9 +17,8 @@ export function Today({ city, weather }: TodayProps) {
   const icon = isDay ? weather.details?.icon_day : weather.details?.icon_night;
 
   return (
-    <section>
       <div
-        className={`flex items-center p-1 justify-around max-h-18 opacity-75 ${
+        className={`flex items-center p-1 justify-around h-10 md:h-20 opacity-75 ${
           !isDay ? "text-yellow" : "text-black"
         }`}
         style={{ backgroundImage: `url(${bgImg})` }}
@@ -39,6 +38,5 @@ export function Today({ city, weather }: TodayProps) {
           <p className="capitalize">{weather.description}</p>
         </footer>
       </div>
-    </section>
   );
 }
