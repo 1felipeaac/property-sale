@@ -8,7 +8,7 @@ import Arrow_Left from "../assets/icons/arrow-left.svg?react";
 import Arrow_Right from "../assets/icons/arrow-right.svg?react";
 import Icon from "./icon";
 
-export default function Slider() {
+export default function Carousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [slideRef, instanceRef] = useKeenSlider<HTMLDivElement>({
@@ -29,7 +29,7 @@ export default function Slider() {
       <div ref={slideRef} className="keen-slider pt-2">
         <div className="keen-slider__slide number-slide1 flex justify-center flex-col items-center">
           <img
-            className="h-auto max-w-[500px] w-full object-cover mx-auto"
+            className="h-auto max-w-[540px] w-full object-cover mx-auto"
             src={Terreno}
             alt="Terreno"
           />

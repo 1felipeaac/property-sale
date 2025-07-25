@@ -24,8 +24,8 @@ interface Contato {
 
         <Button 
           iconClassName="fill-green-light w-15 h-15 md:w-20 md:h-20 
-            p-1 animate-bounce" 
-          className=" bg-white rounded-2xl shadow-xl
+            p-1" 
+          className=" bg-white/80 rounded-2xl shadow-xl
              border-gray-200
             cursor-pointer" 
           icon={WhatsappIcon} 
