@@ -28,7 +28,6 @@ export default function LayoutMain() {
           <DropdownContatos contatos={contatosList}/>
         </div>
       </MainContent>
-      <hr className="border-white"/>
       <Footer/>
     </div>
   );

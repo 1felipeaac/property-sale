@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { getData, updateData } from "../services/jsonbin";
 import Text from "../components/text";
-import Eye from "../assets/icons/eyes.svg?react"
 import SmileSad from "../assets/icons/smiley-sad.svg?react"
-import Icon from "../components/icon";
+import { env } from "../env";
 
 
 export default function AccessCounter() {
   const [visits, setVisits] = useState<number | null>(null);
+
+  const {VITE_DEVELOP} = env
 
   useEffect(() => {
     const fetchAndUpdateVisits = async () => {
@@ -16,9 +17,14 @@ export default function AccessCounter() {
         const data = await getData();
         const current = data.record.visits || 0;
 
-        await updateData(current)
+        if(!"true".includes(VITE_DEVELOP.toLocaleLowerCase())){
+          // console.log("Ambiente de Produção!")
+          await updateData(current)
+          setVisits(current + 1);
+        }else{
+          setVisits(current)
+        }
 
-        setVisits(current + 1);
       } catch (err) {
         console.error("Erro ao acessar contador:", err);
       }
@@ -28,10 +34,10 @@ export default function AccessCounter() {
   }, []);
 
   return (
-    <p className="text-sm text-center text-gray-500 mt-2">
+    <span className="text-sm text-center text-gray-200">
       {visits !== null ? 
-        (<div className="flex items-center h-8 w-8"><Text>{visits}</Text><Icon svg={Eye}/></div>) : 
-        (<SmileSad/>)}
-    </p>
+        (<Text className="flex items-center border-l-2 m-l-1 pl-1">{visits} visitas</Text>) : 
+        (<SmileSad className="fill-gray-200"/>)}
+    </span>
   );
 }
