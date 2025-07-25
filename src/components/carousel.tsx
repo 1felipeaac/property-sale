@@ -37,7 +37,7 @@ export default function Carousel() {
         </div>
         <div className="keen-slider__slide number-slide2">
           <img
-            className="h-auto max-w-[500px] w-full object-cover mx-auto"
+            className="h-auto max-w-[540px] w-full object-cover mx-auto"
             src={Area_Construida}
             alt="Area Construida"
           />

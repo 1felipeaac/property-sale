@@ -1,13 +1,13 @@
 import ListDetails from "../components/list-details";
 import LocationList from "../components/location-list";
 import MapLeaflet from "../components/maps-leaflet";
-import Slider from "../components/slider";
 import Footer from "../core-components/footer";
 import Header from "../core-components/header";
 import MainContent from "../core-components/main-content";
 import DropdownContatos from "../components/dropdown";
 import { env } from "../env";
 import type { ContactUsProps } from "../components/contact";
+import Carousel from "../components/carousel";
 
 export default function LayoutMain() {
   const { VITE_CONTATO_1, VITE_CONTATO_2 } = env;
@@ -24,14 +24,12 @@ export default function LayoutMain() {
           <LocationList />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 items-center mt-5 gap-1 md:gap-4">
-          <Slider />
+          <Carousel />
           <ListDetails />
         </div>
 
         <div
-          className="flex md:flex-row
-            justify-end gap-1 md:gap-4 w-full
-            "
+          className="fixed bottom-10 right-6 z-50"
         >
           <DropdownContatos contatos={[contato1, contato2]}/>
         </div>
