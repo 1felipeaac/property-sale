@@ -22,13 +22,13 @@ export default function LayoutMain() {
           <Carousel />
           <ListDetails />
         </div>
-
         <div
           className="fixed bottom-10 right-6 z-50"
         >
           <DropdownContatos contatos={contatosList}/>
         </div>
       </MainContent>
+      <hr className="border-white"/>
       <Footer/>
     </div>
   );

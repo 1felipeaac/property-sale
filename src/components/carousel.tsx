@@ -24,7 +24,7 @@ export default function Carousel() {
   });
   return (
     <div className="relative w-full max-w-full flex flex-col items-center justify-center">
-      <div ref={slideRef} className="keen-slider w-full max-w-full px-2">
+      <div ref={slideRef} className="keen-slider w-full max-w-full">
         <DetailListCarousel details={carouselList}/>
       </div>
       {loaded && instanceRef.current && (
@@ -65,7 +65,7 @@ function Arrow(props: {
           absolute top-1/2 transform -translate-y-1/2 
           z-10 cursor-pointer w-8 h-8 bg-purple-bold/60 
           rounded-sm ${
-        props.left ? "left-4 md:left-29" : "right-2 md:right-25"
+        props.left ? "left-2" : "right-2"
       } ${disabled}`}
     >
       {props.left && <Icon className="fill-white" svg={Arrow_Left} />}
@@ -90,7 +90,7 @@ function DetailListCarousel({
     <>{details.map((detail, index) => (
     <div key={index} className="keen-slider__slide number-slide1 w-full flex flex-col items-center">
       <img
-        className="h-auto max-w-[540px] w-full object-cover mx-auto"
+        className="h-auto max-w-[750px] w-full object-cover mx-auto"
         src={detail.svg}
         alt={detail.alt}
       />

@@ -5,7 +5,7 @@ import { location } from "../utils/lists";
 
 export default function LocationList() {
   return (
-    <div className="flex flex-col gap-1.5 md:gap-3 md:w-100 m-1 md:m-4">
+    <div className="flex flex-col gap-1.5 md:gap-3 md:w-200 m-1 md:m-4">
       <LocationDetails
         svg={Neighborhood}
         text="Travessa Aquiles Lisboa, 501 - Bairro Mangueira"

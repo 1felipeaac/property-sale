@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Icon from "../components/icon";
 import GitIcon from "../assets/icons/github-logo.svg?react"
+import AccessCounter from "./access-counter";
 
 export default function Footer() {
   const [user, setUser] = useState({
@@ -19,12 +20,13 @@ export default function Footer() {
     },[]);
 
   return (
-    <footer className="text-center py-4 mt-auto">
+    <footer className="text-center py-1 mt-auto">
       <nav className="flex items-center justify-center gap-4">
         <Icon className="" svg={GitIcon}/>
-        <a href={user.html_url} target="_blank">
+        <a className="align-middle" href={user.html_url} target="_blank">
           {user.html_url}
         </a>
+        <AccessCounter/>
       </nav>
     </footer>
   );
