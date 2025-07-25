@@ -4,7 +4,7 @@ import WhatsappIcon from "../assets/icons/whatsapp.svg?react"
 import ContactUs from "./contact";
 
 interface Contato {
-    phone: string | any; // ex: "WhatsApp", "Telefone", "E-mail"
+    phone: string; // ex: "WhatsApp", "Telefone", "E-mail"
     msg: string;
   }
   
@@ -14,30 +14,34 @@ interface Contato {
   
   export default function DropdownContatos({ contatos }: DropdownContatosProps) {
     const [aberto, setAberto] = useState(false);
+
+    function handlerAberto(){
+      setAberto(!aberto)
+    }
   
     return (
-      <div className="relative inline-block text-left">
+      <div className="relative inline-block text-right">
 
-        <Button iconClassName="fill-green-light" className=" bg-gray-100 rounded-2xl" icon={WhatsappIcon} onClick={() => setAberto(!aberto)}/>
-        {/* <button
+        <Button 
+          iconClassName="fill-green-light w-15 h-15 md:w-20 md:h-20 
+            p-1 animate-bounce" 
+          className=" bg-white rounded-2xl shadow-xl
+             border-gray-200
+            cursor-pointer" 
+          icon={WhatsappIcon} 
           onClick={() => setAberto(!aberto)}
-          className="bg-purple-bold text-white px-4 py-2 rounded-md shadow-md hover:bg-purple-700 transition"
-        >
-          Contatos
-        </button> */}
+        />
   
         {aberto && (
-          <div className="absolute z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5">
+          <div className="absolute bottom-full right-0 mb-2 w-56 
+              origin-bottom-right rounded-md bg-gray-100/90 
+              shadow-xl ring-1 ring-black/10 border border-gray-200
+              "
+          >
             
               {contatos.map((contato, index) => (
 
-                <ContactUs key={index} phone={contato.phone} msg={contato.msg}/>
-                // <li
-                //   key={index}
-                //   className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                // >
-                //   <span className="font-semibold">{contato.tipo}:</span> {contato.valor}
-                // </li>
+                <ContactUs onClick={handlerAberto} key={index} phone={contato.phone} msg={contato.msg}/>
               ))}
             
           </div>

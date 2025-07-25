@@ -5,14 +5,16 @@ import Slider from "../components/slider";
 import Footer from "../core-components/footer";
 import Header from "../core-components/header";
 import MainContent from "../core-components/main-content";
-
-import ContactUs from "../components/contact";
 import DropdownContatos from "../components/dropdown";
+import { env } from "../env";
+import type { ContactUsProps } from "../components/contact";
 
 export default function LayoutMain() {
-  const { VITE_CONTATO_1, VITE_CONTATO_2 } = import.meta.env;
+  const { VITE_CONTATO_1, VITE_CONTATO_2 } = env;
 
-  console.log(VITE_CONTATO_1 + " / " + VITE_CONTATO_2)
+  const contato1:ContactUsProps = { phone: VITE_CONTATO_1, msg: "Proprietário"}
+  const contato2:ContactUsProps = { phone: VITE_CONTATO_2, msg: "Contato Local"}
+
   return (
     <div className="h-full m-1 md:m-5 flex flex-col">
       <Header />
@@ -27,14 +29,11 @@ export default function LayoutMain() {
         </div>
 
         <div
-          className="flex flex-col 
-            md:flex-row items-start 
-            justify-evenly gap-1 md:gap-4 w-full
+          className="flex md:flex-row
+            justify-end gap-1 md:gap-4 w-full
             "
         >
-          <DropdownContatos contatos={[{phone: {VITE_CONTATO_1}, msg: "Proprietario"},{phone: {VITE_CONTATO_2}, msg: "Contato Local"},]}/>
-          {/* <ContactUs phone={VITE_CONTATO_1} msg="Falar com o Proprietário" />
-          <ContactUs phone={VITE_CONTATO_2} msg="Contato Local" /> */}
+          <DropdownContatos contatos={[contato1, contato2]}/>
         </div>
       </MainContent>
       <Footer/>
