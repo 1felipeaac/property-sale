@@ -15,7 +15,7 @@ export default function ContactUs({ phone, msg, onClick }: ContactUsProps) {
       target="_blank"
       rel="noopener noreferrer"
       onClick={onClick}
-      className="bg-green-600 text-black px-4 py-2 rounded flex items-center gap-2"
+      className="bg-white uppercase text-green-bold px-4 py-2 rounded flex items-center gap-2"
     >
       <Icon svg={Whatsapp} className="fill-green-light"/>
       <Text as="p">{msg}</Text>

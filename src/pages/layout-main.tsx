@@ -11,7 +11,7 @@ import { contatosList } from "../utils/lists";
 export default function LayoutMain() {
 
   return (
-    <div className="h-full m-1 md:m-5 flex flex-col">
+    <div className="h-full m-1 md:m-5 flex flex-col md:max-w-5xl">
       <Header />
       <MainContent className="flex flex-col">
         <div className="flex flex-col md:flex-row items-center justify-between gap-1 md:gap-4">

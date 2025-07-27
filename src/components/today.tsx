@@ -10,7 +10,7 @@ interface TodayProps {
 }
 
 export function Today({ city, weather }: TodayProps) {
-  const today = dayjs(new Date()).format("dddd, DD [de] MMMM [de] YYYY");
+  const today = dayjs(new Date()).format("dddd, DD/MM/YYYY");
   const isDay = isDayTime();
 
   const bgImg = isDay ? weather.details.bg_day : weather.details.bg_night;
@@ -23,14 +23,14 @@ export function Today({ city, weather }: TodayProps) {
         }`}
         style={{ backgroundImage: `url(${bgImg})` }}
       >
-        <header className="flex flex-col items-start">
+        <header className="flex flex-col items-start min-w-26">
           <h3>{city}</h3>
           <p className="capitalize hidden md:block">{today}</p>
         </header>
 
         <main className="flex items-center justify-center">
           <h1>{weather?.temp}ºc</h1>
-          <img className="w-20 md:w-full" src={icon} alt="Tempo" />
+          <img className="w-15 md:w-full" src={icon} alt="Tempo" />
         </main>
 
         <footer>

@@ -88,9 +88,9 @@ function DetailListCarousel({
 
   return(
     <>{details.map((detail, index) => (
-    <div key={index} className="keen-slider__slide number-slide1 w-full flex flex-col items-center">
+    <div key={index} className="keen-slider__slide number-slide1 flex flex-col items-center">
       <img
-        className="h-auto max-w-[750px] w-full object-cover mx-auto"
+        className="h-auto object-cover mx-auto w-full md:min-w-[450px]"
         src={detail.svg}
         alt={detail.alt}
       />
