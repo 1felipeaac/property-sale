@@ -5,12 +5,12 @@ import { location } from "../utils/lists";
 
 export default function LocationList() {
   return (
-    <div className="flex flex-col gap-1.5 md:gap-3 md:w-200 m-1 md:m-4">
+    <div className="flex flex-col gap-1.5 md:gap-3 w-full">
       <LocationDetails
         svg={Neighborhood}
         text="Travessa Aquiles Lisboa, 501 - Bairro Mangueira"
         className="flex items-center justify-center"
-        iconClassName="fill-blue"
+        iconClassName="fill-red"
       />
       <p className="text-center uppercase text-1xl md:text-2xl">Pontos de Referência</p>
 
@@ -20,14 +20,14 @@ export default function LocationList() {
           key={local.refer + local.icon_distance}
         >
           <LocationDetails
-            className={"flex md:flex-1 items-center justify-start gap-2 min-w-60 "}
-            iconClassName="fill-blue"
+            className={"flex md:flex-1 items-center justify-start gap-2 min-w-70"}
+            iconClassName="fill-blue border-2 rounded-md border-blue"
             svg={local.icon_refer}
             text={local.refer}
           />
           <LocationDetails
-            className={"flex items-center justify-end gap-2 min-w-25"}
-            iconClassName="fill-blue"
+            className={"flex items-center justify-start gap-2 min-w-26"}
+            iconClassName="fill-blue border-2 rounded-md border-blue"
             svg={local.icon_distance}
             text={local.distance}
           />
