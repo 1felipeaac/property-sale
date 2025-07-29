@@ -28,7 +28,7 @@ export default function Footer() {
 
   return (
     <footer className="text-center py-1 mt-2 bg-black text-white">
-      <nav className="flex items-center justify-between gap-4 pl-2 pr-2">
+      <nav className="flex items-center justify-center gap-4 pl-2 pr-2">
         <div className="flex items-center gap-1">
           <Icon className="fill-white" svg={GitIcon}/>
           <a className="align-middle" href={user.html_url} target="_blank">

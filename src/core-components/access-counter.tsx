@@ -34,7 +34,7 @@ export default function AccessCounter() {
   }, []);
 
   return (
-    <span className="text-sm text-center text-gray-200">
+    <span className="text-sm text-center text-gray-200 ml-auto">
       {visits !== null ? 
         (<Text className="flex items-center border-l-2 m-l-1 pl-1">{visits} visitas</Text>) : 
         (<SmileSad className="fill-gray-200"/>)}
