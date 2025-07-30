@@ -10,7 +10,7 @@ export default function Header() {
         className="relative h-20 md:h-80 bg-center bg-cover flex items-center justify-center"
         style={{ backgroundImage: `url(${faxada})` }}
       >
-        <Text as="h1" className="text-black text-1xl md:text-5xl bg-gray-100/60 p-1.5 rounded-sm">
+        <Text as="h1" className="text-black text-1xl md:text-5xl bg-white/40 p-1.5 rounded-sm">
           Imóvel à venda direto com o proprietário
         </Text>
       </header>

@@ -16,7 +16,7 @@ export default function Footer() {
   useEffect(() => {
     fetch('https://api.github.com/users/1felipeaac', {
       headers: {
-        'User-Agent': 'meu-site-react', // Obrigatório para GitHub
+        'User-Agent': 'property-sale',
       },
     })
       .then(res => res.json())
@@ -28,11 +28,11 @@ export default function Footer() {
 
   return (
     <footer className="text-center py-1 mt-2 bg-black text-white">
-      <nav className="flex items-center justify-center gap-4 pl-2 pr-2">
+      <nav className="flex items-center px-2.5">
         <div className="flex items-center gap-1">
           <Icon className="fill-white" svg={GitIcon}/>
           <a className="align-middle" href={user.html_url} target="_blank">
-            {user.html_url}
+            {user.name}
           </a>
         </div>
         <AccessCounter/>

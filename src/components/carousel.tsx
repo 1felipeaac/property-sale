@@ -23,7 +23,7 @@ export default function Carousel() {
     },
   });
   return (
-    <div className="relative w-full max-w-full flex flex-col items-center justify-center">
+    <div className="relative w-full max-w-full flex flex-col items-center justify-center border-white rounded-xl bg-white p-1.5">
       <div ref={slideRef} className="keen-slider w-full max-w-full">
         <DetailListCarousel details={carouselList}/>
       </div>
@@ -90,7 +90,7 @@ function DetailListCarousel({
     <>{details.map((detail, index) => (
     <div key={index} className="keen-slider__slide number-slide1 flex flex-col items-center">
       <img
-        className="h-auto object-cover mx-auto w-full md:min-w-[450px]"
+        className="h-auto object-cover mx-auto w-full md:min-w-[450px] rounded-xl"
         src={detail.svg}
         alt={detail.alt}
       />

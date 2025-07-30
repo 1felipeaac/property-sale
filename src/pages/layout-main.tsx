@@ -18,7 +18,7 @@ export default function LayoutMain() {
           <MapLeaflet />
           <LocationList />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center mt-5 gap-1 md:gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center mt-1 gap-1 md:gap-4">
           <Carousel />
           <ListDetails />
         </div>
