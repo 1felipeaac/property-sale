@@ -7,6 +7,7 @@ import MainContent from "../core-components/main-content";
 import DropdownContatos from "../components/dropdown";
 import Carousel from "../components/carousel";
 import { contatosList } from "../utils/lists";
+import AiBoard from "../components/ai-board";
 
 export default function LayoutMain() {
 
@@ -21,6 +22,11 @@ export default function LayoutMain() {
         <div className="grid grid-cols-1 md:grid-cols-2 items-center mt-1 gap-1 md:gap-4">
           <Carousel />
           <ListDetails />
+        </div>
+        <div
+          className="fixed bottom-25 md:bottom-35 right-6 z-50"
+        >
+          <AiBoard/>
         </div>
         <div
           className="fixed bottom-10 right-6 z-50"

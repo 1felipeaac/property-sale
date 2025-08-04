@@ -6,7 +6,7 @@ export default function ListDetails() {
   return (
     <div className="flex justify-center flex-col 
       md:flex-row md:gap-3 items-center border-2 h-full 
-      border-white rounded-xl bg-white p-1.5 inset-shadow-2xs ..."
+      border-white rounded-xl bg-white p-1.5"
     >
       <Text as="h1" className="text-center uppercase text-1xl md:text-2xl md:border-r-2 md: border-r-purple-bold pr-2 text-purple-bold">Detalhes</Text>
       <div>

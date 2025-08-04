@@ -20,7 +20,7 @@ export default function Footer() {
       },
     })
       .then(res => res.json())
-      .then(data => { console.log(data); setUser(data)})
+      .then(data => setUser(data))
       .catch(err => console.error('Erro ao buscar dados do GitHub:', err));
   }, []);
 

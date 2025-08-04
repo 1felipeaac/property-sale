@@ -5,7 +5,7 @@ import { location } from "../utils/lists";
 
 export default function LocationList() {
   return (
-    <div className="flex flex-col h-full gap-1.5 md:gap-5 border-2 border-white rounded-xl bg-white p-1.5 shadow-xl/20...">
+    <div className="flex flex-col h-full gap-1.5 md:gap-5 border-2 border-white rounded-xl bg-white p-1.5">
       <LocationDetails
         svg={Neighborhood}
         text="Travessa Aquiles Lisboa, 501 - Bairro Mangueira"
@@ -16,17 +16,17 @@ export default function LocationList() {
 
       {location.map((local) => (
         <span
-          className="flex w-full gap-2"
+          className="flex w-full justify-between"
           key={local.refer + local.icon_distance}
         >
           <LocationDetails
-            className={"flex md:flex-1 items-center justify-start gap-2 min-w-58"}
+            className={"flex md:flex-1 items-center justify-start gap-2 min-w-60"}
             iconClassName="fill-blue border-2 rounded-md border-blue"
             svg={local.icon_refer}
             text={local.refer}
           />
           <LocationDetails
-            className={"flex items-center justify-start gap-2 min-w-22"}
+            className={"flex items-center justify-start gap-2 min-w-25"}
             iconClassName="fill-blue border-2 rounded-md border-blue"
             svg={local.icon_distance}
             text={local.distance}

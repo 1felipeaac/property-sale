@@ -23,7 +23,7 @@ export default function Carousel() {
     },
   });
   return (
-    <div className="relative w-full max-w-full flex flex-col items-center justify-center border-white rounded-xl bg-white p-1.5">
+    <div className="relative w-full max-w-full flex flex-col items-center justify-center border-white rounded-xl bg-white p-1">
       <div ref={slideRef} className="keen-slider w-full max-w-full">
         <DetailListCarousel details={carouselList}/>
       </div>

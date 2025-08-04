@@ -27,7 +27,7 @@ interface Contato {
             p-1" 
           className=" bg-green-light/80 rounded-lg shadow-green-bold cursor-pointer" 
           icon={WhatsappIcon} 
-          onClick={() => setAberto(!aberto)}
+          onClick={handlerAberto}
         />
   
         {aberto && (

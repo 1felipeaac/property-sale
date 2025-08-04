@@ -39,7 +39,7 @@ export default function MapLeaflet() {
   const currentLayer = satellite ? mapLayers.esri : mapLayers.osm;
 
   return (
-    <div className="flex w-full flex-col gap-2 mt-1 md:mt-1 items-center relative border-white rounded-xl bg-white p-1.5 shadow-xl/20...">
+    <div className="flex w-full flex-col gap-2 items-center relative border-white rounded-xl bg-white p-1">
       <MapContainer
         className="w-full h-50 md:h-90 relative z-0 m-1 rounded-xl"
         center={center}

@@ -5,7 +5,7 @@ export default function MainContent({
     children,
 }: MainContentProps){
     return(
-        <main className="mt-2 md:mt-5">
+        <main className="mt-2">
             {children}
         </main>
     )
