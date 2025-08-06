@@ -85,12 +85,12 @@ export const carouselList =[
   {
     svg: Terreno,
     alt: "Terreno",
-    desc: "🟨: ~600m² (20mx30m)",
+    desc: "🟨: Terreno",
   },
   {
     svg: Area_Construida,
     alt: "Área Construída",
-    desc: "🟩: ~198m² | 🟦: ~43m² | 🟥: ~67m²",
+    desc: "🟩: Casa | 🟦: Loja | 🟥: Área de Serviço",
   },
 
 ]
