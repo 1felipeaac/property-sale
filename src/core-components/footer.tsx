@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import Icon from "../components/icon";
 import GitIcon from "../assets/icons/github-logo.svg?react"
-// import VisitsCounter from "./visits-counter";
-import AccessCounter from "./access-counter";
+import VisitsCounter from "./visits-counter";
+// import AccessCounter from "./access-counter";
 
 interface GithubUser {
   name: string;
@@ -36,8 +36,8 @@ export default function Footer() {
             {user.name}
           </a>
         </div>
-        {/* <VisitsCounter/> */}
-        <AccessCounter/>
+        <VisitsCounter/>
+        {/* <AccessCounter/> */}
       </nav>
     </footer>
   );

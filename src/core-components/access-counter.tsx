@@ -3,8 +3,6 @@ import { getData, updateData } from "../services/jsonbin";
 import Text from "../components/text";
 import SmileSad from "../assets/icons/smiley-sad.svg?react"
 import { env } from "../env";
-import axios from "axios";
-
 
 export default function AccessCounter() {
   const [visits, setVisits] = useState<number | null>(null);
@@ -16,8 +14,6 @@ export default function AccessCounter() {
       try {
         
         const data = await getData();
-        const count = await axios.get("http://localhost:3333/visitantes")
-        console.log(count.data)
         const current = data.record.visits || 0;
 
         if(!"true".includes(VITE_DEVELOP.toLocaleLowerCase())){

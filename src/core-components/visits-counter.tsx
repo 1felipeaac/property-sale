@@ -9,7 +9,7 @@ export default function VisitsCounter() {
   const [count, setCount] = useState<number | null>(null)
   const hasCounted = useRef(false)
 
-  const {VITE_DEVELOP} = env
+  const {VITE_DEVELOP, VITE_URL_SERVER} = env
 
   useEffect(() => {
 
@@ -20,7 +20,7 @@ export default function VisitsCounter() {
       let response: AxiosResponse
       
       if(!"true".includes(VITE_DEVELOP.toLocaleLowerCase())){
-        response = await axios.put("http://localhost:3333/visitantes")
+        response = await axios.put(VITE_URL_SERVER)
         setCount(response.data.count)
         
       }else{

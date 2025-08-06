@@ -9,6 +9,7 @@ const envSchema = z.object({
     VITE_BIN_ID:z.string(),
     VITE_BIN_SECRET_KEY:z.string(),
     VITE_DEVELOP:z.string(),
+    VITE_URL_SERVER:z.string()
 })
 
 export const env = envSchema.parse(import.meta.env)
