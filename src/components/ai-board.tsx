@@ -8,6 +8,7 @@ import axios from "axios";
 import z from "zod";
 import Icon from "./icon";
 import Text from "./text";
+import { env } from "../env";
 
 const questionSchema = z.object({
   question: z.string().min(5, { message: "A pergunta deve ter pelo menos 5 caracteres." }),
@@ -19,6 +20,8 @@ export default function AiBoard() {
   const [response, setResponse] = useState("");
   const [loading, setLoading] = useState(false);
   const [serverOnline, setServerOnline] = useState<boolean | null>(null);
+
+  const {VITE_URL_SERVER, VITE_DEVELOP} = env
 
   function handlerAberto(){
     setAberto(!aberto)
@@ -62,8 +65,17 @@ export default function AiBoard() {
   }
 
   useEffect(() => {
+
+    let url: string
+
+    if(!"true".includes(VITE_DEVELOP.toLocaleLowerCase())){
+      url = VITE_URL_SERVER
+    }else{
+      url = "http://localhost:3333/"
+    }
+
     axios
-      .get("http://localhost:3333/health")
+      .get(`${url}/health`)
       .then(() => setServerOnline(true))
       .catch(() => setServerOnline(false));
   }, []);
