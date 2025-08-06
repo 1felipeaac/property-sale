@@ -23,6 +23,14 @@ export default function AiBoard() {
 
   const {VITE_URL_SERVER, VITE_DEVELOP} = env
 
+  let url: string
+
+  if(!"true".includes(VITE_DEVELOP.toLocaleLowerCase())){
+    url = VITE_URL_SERVER
+  }else{
+    url = "http://localhost:3333/"
+  }
+
   function handlerAberto(){
     setAberto(!aberto)
     setQuestion("")
@@ -52,7 +60,7 @@ export default function AiBoard() {
     setResponse("");
 
     try {
-      const res = await axios.post("http://localhost:3333/perguntar", {
+      const res = await axios.post(`${url}/perguntar`, {
         pergunta: question,
       });
 
