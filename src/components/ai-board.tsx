@@ -79,7 +79,7 @@ export default function AiBoard() {
     if(!"true".includes(VITE_DEVELOP.toLocaleLowerCase())){
       url = VITE_URL_SERVER
     }else{
-      url = "http://localhost:3333/"
+      url = "http://localhost:3333"
     }
 
     axios
@@ -113,7 +113,7 @@ export default function AiBoard() {
               <Icon className="fill-red"svg={NoSignalIcon}/> : 
               <div className="mx-2">
                 <h1 className="text-2xl text-white font-bold mb-4">Olá, visitante</h1>
-                <form onSubmit={handleSubmit} className="flex gap-1 min-w-92">
+                <form onSubmit={handleSubmit} className="flex gap-1 min-w-80">
                   <input
                     id="question"
                     name="question"

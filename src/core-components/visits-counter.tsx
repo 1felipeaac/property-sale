@@ -20,7 +20,7 @@ export default function VisitsCounter() {
       let response: AxiosResponse
       
       if(!"true".includes(VITE_DEVELOP.toLocaleLowerCase())){
-        response = await axios.put(VITE_URL_SERVER)
+        response = await axios.put(`${VITE_URL_SERVER}/visitantes`)
         setCount(response.data.count)
         
       }else{

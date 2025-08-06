@@ -24,12 +24,12 @@ export default function LayoutMain() {
           <ListDetails />
         </div>
         <div
-          className="fixed bottom-25 md:bottom-35 right-6 z-50"
+          className="fixed bottom-25 md:bottom-35 right-3 z-50"
         >
           <AiBoard/>
         </div>
         <div
-          className="fixed bottom-10 right-6 z-50"
+          className="fixed bottom-10 right-3 z-50"
         >
           <DropdownContatos contatos={contatosList}/>
         </div>
