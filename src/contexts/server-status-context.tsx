@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useRef, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { env } from "../env";
 import { useIsMounted } from "../hooks/use-is-mounted";
@@ -43,7 +43,7 @@ export function ServerStatusProvider({ children }: { children: React.ReactNode }
           setLoading(false);
         }
       });
-      
+
   }, [VITE_URL_SERVER, VITE_DEVELOP]);
 
   return (
