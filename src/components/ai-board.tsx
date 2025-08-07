@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Button from "./button";
 import RobotIcon from "../assets/icons/robot.svg?react"
 import SentIcon from "../assets/icons/sent.svg?react"
@@ -9,6 +9,7 @@ import z from "zod";
 import Icon from "./icon";
 import Text from "./text";
 import { env } from "../env";
+import { useServerStatus } from "../contexts/server-status-context";
 
 const questionSchema = z.object({
   question: z.string().min(5, { message: "A pergunta deve ter pelo menos 5 caracteres." }),
@@ -19,7 +20,8 @@ export default function AiBoard() {
   const [question, setQuestion] = useState("");
   const [response, setResponse] = useState("");
   const [loading, setLoading] = useState(false);
-  const [serverOnline, setServerOnline] = useState<boolean | null>(null);
+
+   const { serverOnline } = useServerStatus();
 
   const {VITE_URL_SERVER, VITE_DEVELOP} = env
 
@@ -28,7 +30,7 @@ export default function AiBoard() {
   if(!"true".includes(VITE_DEVELOP.toLocaleLowerCase())){
     url = VITE_URL_SERVER
   }else{
-    url = "http://localhost:3333/"
+    url = "http://localhost:3333"
   }
 
   function handlerAberto(){
@@ -38,10 +40,7 @@ export default function AiBoard() {
   }
 
   function aiIsOff(){
-    if(serverOnline === true){
-      return false
-    }
-    return true
+    return serverOnline !== true
   }
 
   async function handleSubmit( e: React.FormEvent){
@@ -71,30 +70,12 @@ export default function AiBoard() {
         setLoading(false);
     }
   }
-
-  useEffect(() => {
-
-    let url: string
-
-    if(!"true".includes(VITE_DEVELOP.toLocaleLowerCase())){
-      url = VITE_URL_SERVER
-    }else{
-      url = "http://localhost:3333"
-    }
-
-    axios
-      .get(`${url}/health`)
-      .then(() => setServerOnline(true))
-      .catch(() => setServerOnline(false));
-  }, []);
-
-
   return (
     <div className="relative inline-block text-left">
 
       <Button 
         iconClassName="fill-white w-12 h-12 md:w-20 md:h-20 p-1" 
-        className={`${!aiIsOff() ? "bg-blue/80 rounded-lg shadow-blue":"bg-red/20 rounded-lg shadow-red"}  
+        className={`${!aiIsOff() ? "bg-blue/80 rounded-lg shadow-blue":"bg-red/80 rounded-lg shadow-red"}  
           cursor-pointer`
         } 
         icon={RobotIcon} 
@@ -110,7 +91,14 @@ export default function AiBoard() {
         >
           {
             aiIsOff() ? 
-              <Icon className="fill-red"svg={NoSignalIcon}/> : 
+              <Text className="flex flex-col w-44 justify-center items-center">
+                <Icon className="col-span-2 fill-red"svg={NoSignalIcon}/> 
+                <span className="flex flex-col justify-center items-center p-0.5">
+                  <b className="text-red">IA Off</b>
+                  <p className="text-justify text-white">Atualize a página ou agurde um instante</p>
+                </span>
+              </Text>
+                : 
               <div className="mx-2">
                 <h1 className="text-2xl text-white font-bold mb-4">Olá, visitante</h1>
                 <form onSubmit={handleSubmit} className="flex gap-1 min-w-80">
@@ -136,7 +124,7 @@ export default function AiBoard() {
                     loading && 
                       <Text className="flex items-center gap-1 text-white">
                         <Icon className="animate-spin fill-white" svg={SpinnerIcon}/>
-                        <p className="text-gray-500 italic">Pensando...</p>
+                        <p className="text-gray-500 italic">Aguarde a resposta...</p>
                       </Text> 
                   }
                   {

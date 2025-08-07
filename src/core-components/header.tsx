@@ -11,7 +11,7 @@ export default function Header() {
         style={{ backgroundImage: `url(${faxada})` }}
       >
         <Text as="h1" className="text-black text-1xl md:text-5xl bg-white/40 p-1.5 rounded-sm">
-          Imóvel à venda direto com o proprietário
+          Terreno à venda direto com o proprietário
         </Text>
       </header>
     </>
