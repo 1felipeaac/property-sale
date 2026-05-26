@@ -7,7 +7,7 @@ import Icon from "./icon";
 
 export function OpenWeather() {
   const [data, setData] = useState<GetWeatherByCityResponseProps>(
-    {} as GetWeatherByCityResponseProps
+    {} as GetWeatherByCityResponseProps,
   );
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -36,12 +36,12 @@ export function OpenWeather() {
   }
 
   if (error) {
-    return <div className="flex justify-center text-red-error mt-2 mb-2">{error}</div>;
+    return (
+      <div className="flex justify-center text-red-error mt-2 mb-2">
+        {error}
+      </div>
+    );
   }
 
-  return (
-    <div>
-      <Today city="Timon" weather={data.today.weather} />
-    </div>
-  );
+  return <Today city="Timon" weather={data.today.weather} />;
 }

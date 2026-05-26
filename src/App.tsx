@@ -1,15 +1,12 @@
-import Container from "./components/Container";
 import { ServerStatusProvider } from "./contexts/server-status-context";
 import LayoutMain from "./pages/layout-main";
 
 export default function App() {
   return (
     <ServerStatusProvider>
-      <Container 
-        className="min-h-screen flex justify-center items-center px-2"
-      >
+      <div className="min-h-screen bg-gray-50 text-gray-900 font-sans">
         <LayoutMain/>
-      </Container>
+      </div>
     </ServerStatusProvider>
   );
 }

@@ -17,26 +17,39 @@ export function Today({ city, weather }: TodayProps) {
   const icon = isDay ? weather.details?.icon_day : weather.details?.icon_night;
 
   return (
-      <div
-        className={`flex items-center p-1 justify-around h-10 md:h-20 opacity-75 ${
-          !isDay ? "text-yellow" : "text-black"
-        }`}
-        style={{ backgroundImage: `url(${bgImg})` }}
-      >
-        <header className="flex flex-col items-start min-w-26">
-          <h3>{city}</h3>
-          <p className="capitalize hidden md:block">{today}</p>
-        </header>
+    <div
+      className={`flex items-center justify-around h-10 md:h-15 transition-colors duration-300 ${
+        !isDay
+          ? "text-amber-400 opacity-90 drop-shadow-md"
+          : "text-slate-900 opacity-80"
+      } p-2 rounded-lg shadow-sm bg-cover bg-center w-full max-w-30 md:max-w-sm`}
+      style={{ backgroundImage: `url(${bgImg})` }}
+    >
+      <header className="flex w-full justify-center items-center md:w-3xs md:flex-col md:gap-1">
+        <span className="flex items-center gap-2">
+          <h1 className="font-heading font-bold text-sm md:text-lg text-center flex-1">
+            {city}
+          </h1>
+          <h3 className="font-heading font-bold text-sm hidden md:block">
+            {weather?.temp}ºc
+          </h3>
+        </span>
+        <p className="capitalize hidden md:block text-xs">{today}</p>
+      </header>
 
-        <main className="flex items-center justify-center">
-          <h1>{weather?.temp}ºc</h1>
-          <img className="w-15 md:w-full" src={icon} alt="Tempo" />
-        </main>
+      <main className="flex items-center justify-center">
+        <img className="w-15 md:w-20" src={icon} alt="Tempo" />
+      </main>
 
-        <footer>
-          <h3 className="capitalize hidden md:block">{weather?.temp_min}ºc / {weather?.temp_max}ºc</h3>
-          <p className="capitalize">{weather.description}</p>
-        </footer>
-      </div>
+      <footer className="md:flex md:items-center md:gap-4">
+        <div className="capitalize text-xs flex flex-col justify-center">
+          <span className="text-indigo-500">{weather?.temp_min}ºc</span>
+          <span className="text-rose-600">{weather?.temp_max}ºc</span>
+        </div>
+        <p className="capitalize text-xs hidden md:block">
+          {weather.description}
+        </p>
+      </footer>
+    </div>
   );
 }

@@ -22,11 +22,13 @@ export default function Carousel() {
       setLoaded(true);
     },
   });
+
   return (
-    <div className="relative w-full max-w-full flex flex-col items-center justify-center border-white rounded-xl bg-white p-1">
-      <div ref={slideRef} className="keen-slider w-full max-w-full">
-        <DetailListCarousel details={carouselList}/>
+    <div className="relative w-full overflow-hidden group">
+      <div ref={slideRef} className="keen-slider w-full">
+        <DetailListCarousel details={carouselList} />
       </div>
+
       {loaded && instanceRef.current && (
         <>
           <Arrow
@@ -36,7 +38,6 @@ export default function Carousel() {
             }
             disabled={currentSlide === 0}
           />
-
           <Arrow
             onClick={(e: any) =>
               e.stopPropagation() || instanceRef.current?.next()
@@ -57,44 +58,49 @@ function Arrow(props: {
   left?: boolean;
   onClick: (e: any) => void;
 }) {
-  const disabled = props.disabled ? " arrow--disabled" : "";
+  const disabled = props.disabled
+    ? "opacity-50 cursor-not-allowed"
+    : "hover:scale-105 hover:bg-slate-200 active:scale-95 transition-transform duration-200";
   return (
-    <svg
+    <button
       onClick={props.onClick}
-      className={`
-          absolute top-1/2 transform -translate-y-1/2 
-          z-10 cursor-pointer w-8 h-8 bg-purple-bold/60 
-          rounded-sm ${
-        props.left ? "left-2" : "right-2"
+      className={`absolute top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-12 h-12 bg-white text-zinc-800 rounded-full shadow-lg transition-all ${
+        props.left ? "left-4" : "right-4"
       } ${disabled}`}
     >
-      {props.left && <Icon className="fill-white" svg={Arrow_Left} />}
-      {!props.left && <Icon className="fill-white" svg={Arrow_Right} />}
-    </svg>
+      <Icon
+        className="w-6 h-6 fill-current"
+        svg={props.left ? Arrow_Left : Arrow_Right}
+      />
+    </button>
   );
 }
-interface DetailCarousel {
-  svg: string
-  alt: string
-  desc: string
-}
 
-interface DetailCarouselProps{
-  details: DetailCarousel[]
-}
 function DetailListCarousel({
-  details
-}:DetailCarouselProps){
-
-  return(
-    <>{details.map((detail, index) => (
-    <div key={index} className="keen-slider__slide number-slide1 flex flex-col items-center">
-      <img
-        className="h-auto object-cover mx-auto w-full md:min-w-[450px] rounded-xl"
-        src={detail.svg}
-        alt={detail.alt}
-      />
-      <p className="text-center">{detail.desc}</p>
-    </div>))}</>
-  )
+  details,
+}: {
+  details: { svg: string; alt: string; desc: string }[];
+}) {
+  return (
+    <>
+      {details.map((detail, index) => (
+        <div
+          key={index}
+          className="keen-slider__slide relative flex flex-col items-center bg-slate-50 rounded-xl overflow-hidden border border-slate-50"
+        >
+          <img
+            className="w-full h-[300px] md:h-[450px] object-contain p-2.5 md:p-4 mb-2"
+            src={detail.svg}
+            alt={detail.alt}
+          />
+          {/* Degradê elegante na parte inferior da imagem para ler o texto */}
+          <div className="absolute bottom-0 w-full bg-gradient-to-t from-black via-black/80 to-transparent p-1 md:p-6 text-indigo-600">
+            <p className="text-center text-base md:text-lg font-medium tracking-wide drop-shadow-md">
+              {detail.desc}
+            </p>
+          </div>
+        </div>
+      ))}
+    </>
+  );
 }

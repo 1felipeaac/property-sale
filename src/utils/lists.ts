@@ -24,7 +24,7 @@ export const location = [
   },
   {
     icon_refer: Market,
-    refer: "Shopping/Supermercado",
+    refer: "Shopping | Supermercado",
     icon_distance: Ruler,
     distance: "~1,3km",
   },

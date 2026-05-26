@@ -23,9 +23,9 @@ interface Contato {
       <div className="relative inline-block text-right">
 
         <Button 
-          iconClassName="fill-white w-12 h-12 md:w-20 md:h-20 
+          iconClassName="fill-white w-10 h-10 
             p-1" 
-          className=" bg-green-light/80 rounded-lg shadow-green-bold cursor-pointer" 
+          className=" bg-emerald-600/80 rounded-lg shadow-emerald-600 cursor-pointer" 
           icon={WhatsappIcon} 
           onClick={handlerAberto}
         />

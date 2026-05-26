@@ -1,24 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700&display=swap');
+
 @import "tailwindcss";
+@tailwind utilities;
 
 @theme {
-  --color-*:initial;
+  
+  --color-*: initial;
+  
+  /* Cores Base */
   --color-white: #ffffff;
-  --color-gray-100: #ebebeb;
-  --color-gray-200: #878777;
-  --color-gray-300: #9c9a9a;
-  --color-gray-400: #353b36;
-  --color-gray-shadow: #bab5b5;
-  --color-black: #0d0b0b;
-  --color-green-light: #2ad44c;
-  --color-green-bold: #115c20;
-  --color-purple-light: #ecbff5;
-  --color-purple-bold: #92649c;
-  --color-red: #eb4034;
-  --color-blue: #1197d1;
-  --color-yellow: #e1f071;
+  --color-transparent: transparent;
+
+  
+  --color-slate-50: #f8fafc; 
+  --color-slate-100: #f1f5f9; 
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1; 
+  --color-slate-400: #94a3b8; 
+  --color-slate-500: #64748b; 
+  --color-slate-600: #475569; 
+  --color-slate-800: #1e293b; 
+  --color-slate-900: #0f172a; 
+
+  --color-indigo-50: #eef2ff; 
+  --color-indigo-100: #e0e7ff;
+  --color-indigo-500: #6366f1;
+  --color-indigo-600: #4f46e5;
+  --color-indigo-700: #4338ca;
+  --color-indigo-900: #312e81;
+
+  --color-emerald-50: #ecfdf5;  
+  --color-emerald-600: #059669; 
+  --color-rose-50: #fff1f2;     
+  --color-rose-600: #e11d48;   
+  
+  --color-amber-400: #fbbf24;
 
   --font-sans: "Inter", sans-serif;
+  --font-heading: "Outfit", sans-serif; 
 
-  --shadow-sm: 0px 4px 8px 0px rgba(54, 23, 45, 0.05);
-
+  
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05); 
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); 
+  --shadow-card: 0px 4px 24px -4px rgba(15, 23, 42, 0.06); 
 }

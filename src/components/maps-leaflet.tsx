@@ -69,8 +69,8 @@ export default function MapLeaflet() {
               bg-white text-sm text-black
               rounded-sm
               flex items-center justify-center pl-1 pr-1
-              border-1 border-gray-shadow shadow
-              hover:bg-gray-100
+              border-1 border-slate-500 shadow
+              hover:bg-slate-100
               ml-0.5
             `}
           >
