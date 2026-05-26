@@ -93,8 +93,8 @@ function DetailListCarousel({
             src={detail.svg}
             alt={detail.alt}
           />
-          {/* Degradê elegante na parte inferior da imagem para ler o texto */}
-          <div className="absolute bottom-0 w-full bg-gradient-to-t from-black via-black/80 to-transparent p-1 md:p-6 text-indigo-600">
+         
+          <div className="absolute bottom-0 w-full p-1 md:p-6 text-indigo-600 md:text-white">
             <p className="text-center text-base md:text-lg font-medium tracking-wide drop-shadow-md">
               {detail.desc}
             </p>
